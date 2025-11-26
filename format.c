@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
         else if (format[i] == '%' && format[i + 1] == 's')
           {str = va_arg(args, char *);
 	    if (str == NULL) /* pour eviter un crash en cas de string NULL*/
-		Str = "(null)";
+		str = "(null)";
             len = 0;
             while (str[len] != 0)
               {len++;
