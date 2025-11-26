@@ -1,0 +1,22 @@
+.TH _printf 1 "Novembre 2025" "Holberton" "Manuel Utilisateur"
+
+.SH NAME _printf - recodage de la fonction printf en langage C
+
+.SH SYNOPSIS .B int _printf(const char *format, ...);
+
+.SH DESCRIPTION Fonction qui affiche une selection dans la sortie standard selon un format defini par l'utilisateur. La fonction lit chacun des caracteres saisis par l'utilisateur, tant qu'ils ne sont que des caracteres "classiques", _printf les affiche dans la sortie standard. Lorsque l'utilisateur saisit un % suivi d'un caractere, _printf va chercher une correspondance avec les specifieurs disponibles (c, s, %, d, i) afin de determiner s'il doit ou non convertir la chaine "%x". Si le caractere suivant '%' correspond, _printf va aller chercher le format correspondant dans le fichier "format", puis la valeur correspondante dans la variable declaree. _printf peut afficher les caracteres seuls, les chaines de caracteres, les nombres entiers, et les caracteres speciaux (separateurs).
+
+.SH RETURN VALUE Retourne le nombre de caracteres affiches, ou -1 en cas d'erreur.
+
+.SH FORMAT SPECIFIERS
+%c affiche un caractere,
+%s affiche une chaine de caracteres,
+%% affiche un pourcent ('%'),
+%d affiche un entier,
+%i affiche un entier
+
+.SH EXAMPLES _printf("Hello %s", world);
+
+.SH AUTHORS
+Adele MEGELINK
+Laetitia GRONDIN
