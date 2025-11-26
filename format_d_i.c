@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdio.h>
 #include "main.h"
 /**
  * format_d_i - Produces output according to a format
@@ -17,6 +18,7 @@ int format_d_i(const char *format,...)
 	va_start(args, format);
 	if (format == NULL)
 	{
+		printf("(null)");
 		return (-1);
 	}
 	while (format[i] != '\0')
@@ -29,7 +31,7 @@ int format_d_i(const char *format,...)
 		}
 		else
 		{
-			write(1, &nup, 1);
+			write(1, &num, 1);
 			nbChar++;
 		}
 	va_end(args);
