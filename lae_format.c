@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 	int nbChar = 0;
 	char *str;
 	char c;
+	int num;
 
 	va_start(args, format);
 	if (format == NULL)
@@ -50,6 +51,13 @@ int _printf(const char *format, ...)
 				write(1, "%", 1);
 				nbChar++;
 			}
+			else if (format[i] == '%' && (format[i + 1] == 'd' || format[i + 1] == 'i'))
+		{
+			num = va_arg(args, int);
+			write(1, &num, 1);
+			i++;
+			nbChar++;
+		}
 			else
 			{
 				write(1, &format[i - 1], 1);
