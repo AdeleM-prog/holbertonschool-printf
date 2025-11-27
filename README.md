@@ -76,12 +76,11 @@ Erreurs : En cas de spécificateur non reconnu, _printf l'affichera en l'état, 
 
 ## Structure du projet
 
-- main.h: contient les prototypes et la structure
-- _printf.c: corps de la fonction, répartit le flux
-- print_char.c: détermine le comportement si %c
-- print_string.c: détermine le comportement si %s
-- print_percent.c: détermine le comportement si %%
-- print_int.c: détermine le comportement si %d ou %i
+- main.h     : contient les prototypes et la structure
+- _printf.c  : corps de la fonction, appelle la fonction
+- spec.c     : selon le spécificateur de conversion fourni, détermine le comportement de la fonction
+- README.md
+- man_3_printf
 
 ## Exemples d'utilisation
 
