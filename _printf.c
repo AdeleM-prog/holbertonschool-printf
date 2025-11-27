@@ -33,7 +33,7 @@ struct spec table[] =
 	{
 		if (format[i] == '%')
 		{
-		  for (j = 0; table[j] != '0'; j++)
+		  for (j = 0; table[j] != '\0'; j++)
 		    {
 		      if (format[i] == table[j].spec)
 			{
