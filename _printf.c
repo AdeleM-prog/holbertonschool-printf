@@ -12,9 +12,6 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i = 0;
 	int nbChar = 0;
-	char *str;
-	char c;
-	int num;
 	int j;
 	
 struct spec table[] =
