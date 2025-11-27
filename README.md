@@ -49,7 +49,7 @@ Erreurs : En cas de spécificateur non reconnu, _printf l'affichera en l'état, 
 
 - Flowchart, fonctionnement interne
 
-
+![Flowchart _printf](Flowchart_printf.drawio.png)
 
 - Structure du projet
 
@@ -75,8 +75,6 @@ _printf("Pourcentage: %%");
 Affiche: Pourcentage: %
 
 Auteurs:
+
 Adèle MEGELINK
 Laëtitia GRONDIN
-
-
-
