@@ -1,21 +1,53 @@
-.TH _printf 1 "Novembre 2025" "Holberton" "Manuel Utilisateur"
+.TH _printf 3 2025-11-27 GNU FONCTION DES BIBLIOTHEQUES
 
-.SH NAME _printf - recodage de la fonction printf en langage C
+.SH NAME
+_printf - recodage de la fonction printf en langage C
 
-.SH SYNOPSIS .B int _printf(const char *format, ...);
+.SH SYNOPSIS
+.BI "int _printf(const char *" format ", ...);"
 
-.SH DESCRIPTION Fonction qui affiche une selection dans la sortie standard selon un format defini par l'utilisateur. La fonction lit chacun des caracteres saisis par l'utilisateur, tant qu'ils ne sont que des caracteres "classiques", _printf les affiche dans la sortie standard. Lorsque l'utilisateur saisit un % suivi d'un caractere, _printf va chercher une correspondance avec les specifieurs disponibles (c, s, %, d, i) afin de determiner s'il doit ou non convertir la chaine "%x". Si le caractere suivant '%' correspond, _printf va aller chercher le format correspondant dans le fichier "format", puis la valeur correspondante dans la variable declaree. _printf peut afficher les caracteres seuls, les chaines de caracteres, les nombres entiers, et les caracteres speciaux (separateurs).
+.SH DESCRIPTION
+Fonction qui affiche une selection dans la sortie standard selon un format defini par l'utilisateur. La fonction lit chacun des caracteres saisis par l'utilisateur, et affiche les caracteres standards dans la sortie standard. Lorsque l'utilisateur saisit un % suivi d'un caractere, _printf va chercher une correspondance avec les specificateurs disponibles (c, s, %, d, i) afin de determiner s'il doit ou non convertir la chaine "%x". Si le caractere suivant '%' correspond a l'un des specificateurs connus, _printf cherche le comportement a adopter (la fonction a appeler) dans spec.c, puis appelle la fonction et applique le comportement a l'argument fourni. Si le specificateur n'est pas connu, la fonction affiche la combinaison "%caractere". Puis _printf continue de parcourir la selection de l'utilisateur jusqu'au dernier caractere.
 
-.SH RETURN VALUE Retourne le nombre de caracteres affiches, ou -1 en cas d'erreur.
+.SH RETURN VALUE
+_printf retourne le nombre de caracteres affiches, ou -1 en cas d'erreur.
+Pour "%s": si "%s" == NULL, la fonction retourne "(null)" pour eviter le crash de la fonction et de l'eventuel programme associe.
+
+.SH ERRORS
+Si la selection de l'utilisateur est NULL, ou si l'utilisateur ne fournit pas de variable pour un specificateur de conversion, la fonction retourne -1.
+
+.SH FILES
+main.h     : contient les prototypes et la structure
+_printf.c  : corps de la fonction, affiche chaque caractere et appelle la fonction associee au specificateur de conversion
+spec.c     : determine le comportement de chaque specificateur de conversion
 
 .SH FORMAT SPECIFIERS
 %c affiche un caractere,
 %s affiche une chaine de caracteres,
 %% affiche un pourcent ('%'),
 %d affiche un entier,
-%i affiche un entier
+%i affiche un entier.
 
-.SH EXAMPLES _printf("Hello %s", world);
+.SH EXAMPLES
+.EX
+_printf("Hello %s", world);
+.EE
+Affiche: Hello world
+
+.EX
+_printf("Entiers: %d, %i", 2026, -2026);
+.EE
+Affiche: Entiers: 2026, -2026
+
+.EX
+_printf("%c", 'A');
+.EE
+Affiche: A
+
+.EX
+_printf("Pourcentage: %%");
+.EE
+Affiche: Pourcentage: %
 
 .SH AUTHORS
 Adele MEGELINK
