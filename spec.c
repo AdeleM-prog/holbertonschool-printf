@@ -84,3 +84,18 @@ int print_int(va_list args)
 	}
 	return (len);
 }
+
+/**
+ * print_percent - Prints a single "%"
+ * @args: a list of arguments from which the character to print is extracted
+ *
+ * Return: 1, representing the number of characters printed
+ */
+int print_percent(va_list args)
+{
+        char c;
+
+        c = va_arg(args, int);
+        write(1, &c, 1);
+        return (1);
+}
