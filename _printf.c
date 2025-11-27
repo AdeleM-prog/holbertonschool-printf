@@ -35,9 +35,11 @@ struct spec table[] =
 		{
 		  for (j = 0; table[j].spec != '\0'; j++)
 		    {
-		      if (format[i] == table[j].spec)
+		      if (format[i + 1] == table[j].spec)
 			{
+			  i++;
 			 nbChar = nbChar + table[j].f(args);
+			 break;
 			}
 		    }
 		  if (table[j].spec == '\0')
