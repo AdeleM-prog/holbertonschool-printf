@@ -45,8 +45,10 @@ struct spec table[] =
 		  if (table[j].spec == '\0')
 		    {
 		     write(1, "%", 1);
-		     write(1, &format[i], 1);
+		     write(1, &format[i + 1], 1);
+		     i++;
 		     nbChar = nbChar + 2;
+		     break;
 		     }
 		}
 		else

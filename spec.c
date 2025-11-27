@@ -37,7 +37,7 @@ int print_string(va_list args)
 	}
 	while (str[i] != '\0')
 	{
-		write(1, str, 1);
+		write(1, &str[i], 1);
 		len++;
 		i++;
 	}
