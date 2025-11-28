@@ -53,7 +53,6 @@ struct spec table[] =
 		     write(1, &format[i + 1], 1);
 		     i++;
 		     nbChar = nbChar + 2;
-		     break;
 			}
 		    }
 		}
