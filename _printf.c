@@ -53,7 +53,7 @@ struct spec table[] =
 		     nbChar = nbChar + 2;
 		     break;
 			}
-		}
+		    }
 		}
 		else
 		{
