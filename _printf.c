@@ -34,7 +34,7 @@ struct spec table[] =
 		{
 		  if (format[i + 1] == '\0')
 		    {
-		      return(nbChar);
+		      return(-1);
 		    }
 		  else
 		    {
