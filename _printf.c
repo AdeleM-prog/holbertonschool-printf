@@ -33,7 +33,9 @@ struct spec table[] =
 		if (format[i] == '%')
 		{
 		  if (format[i + 1] == '\0')
-		    break;
+		    {
+		      return(nbChar);
+		    }
 		  else
 		    {
 		  for (j = 0; table[j].spec != '\0'; j++)
