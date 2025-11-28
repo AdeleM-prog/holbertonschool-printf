@@ -54,6 +54,7 @@ struct spec table[] =
 		     break;
 			}
 		}
+		}
 		else
 		{
 			write(1, &format[i], 1);
