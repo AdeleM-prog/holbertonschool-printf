@@ -23,7 +23,6 @@ struct spec table[] =
     {'i', print_int},
     {'\0', NULL}
   };
-    
 	va_start(args, format);
 	if (format == NULL)
 	{
@@ -33,6 +32,10 @@ struct spec table[] =
 	{
 		if (format[i] == '%')
 		{
+		  if (format[i + 1] == '\0')
+		    break;
+		  else
+		    {
 		  for (j = 0; table[j].spec != '\0'; j++)
 		    {
 		      if (format[i + 1] == table[j].spec)
@@ -43,13 +46,13 @@ struct spec table[] =
 			}
 		    }
 		  if (table[j].spec == '\0')
-		    {
+			{
 		     write(1, "%", 1);
 		     write(1, &format[i + 1], 1);
 		     i++;
 		     nbChar = nbChar + 2;
 		     break;
-		     }
+			}
 		}
 		else
 		{
